@@ -22,7 +22,7 @@
 
 
 //****************************************************************************************//
-
+//I2C驱动模块，使用状态机将读写入摄像头寄存器
 module i2c_dri
     #(
       parameter   SLAVE_ADDR = 7'b1010000   ,  //EEPROM从机地址
@@ -36,13 +36,13 @@ module i2c_dri
     //i2c interface                      
     input                i2c_exec   ,  //I2C触发执行信号
     input                bit_ctrl   ,  //字地址位控制(16b/8b)
-    input                i2c_rh_wl  ,  //I2C读写控制信号
-    input        [15:0]  i2c_addr   ,  //I2C器件内地址
-    input        [ 7:0]  i2c_data_w ,  //I2C要写的数据
-    output  reg  [ 7:0]  i2c_data_r ,  //I2C读出的数据
+    input                i2c_rh_wl  ,  //I2C读写控制信号，本次只写
+    input        [15:0]  i2c_addr   ,  //I2C器件内地址，来自于i2c_ov7725_rgb565_cfg模块
+    input        [ 7:0]  i2c_data_w ,  //I2C要写的数据，来自于i2c_ov7725_rgb565_cfg模块
+    output  reg  [ 7:0]  i2c_data_r ,  //I2C读出的数据，此工程中未使用
     output  reg          i2c_done   ,  //I2C一次操作完成
     output  reg          i2c_ack    ,  //I2C应答标志 0:应答 1:未应答
-    output  reg          scl        ,  //I2C的SCL时钟信号
+    output  reg          scl        ,  //I2C的SCL时钟信号  用于SCCB协议传输
     inout                sda        ,  //I2C的SDA信号
                                        
     //user interface                   

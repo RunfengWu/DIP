@@ -22,7 +22,7 @@
 
 
 //****************************************************************************************//
-
+//用于配置摄像头寄存器的状态
 module i2c_ov7725_rgb565_cfg(  
     input                clk      ,  //时钟信号
     input                rst_n    ,  //复位信号，低电平有效
@@ -50,9 +50,9 @@ reg    [6:0]   init_reg_cnt  ;       //寄存器配置个数计数器
 always @(posedge clk or negedge rst_n) begin            //摄像头配置要求：刚上电或者软复位时，需要延时1ms（其他时刻保持在1023）
     if(!rst_n)
         start_init_cnt <= 10'b0;    
-    else if((init_reg_cnt == 7'd1) && i2c_done)
+    else if((init_reg_cnt == 7'd1) && i2c_done)         //针对第一个寄存器，需要延时1ms
         start_init_cnt <= 10'b0;
-    else if(start_init_cnt < 10'd1023) begin           
+    else if(start_init_cnt < 10'd1023) begin            //其他寄存器，不需要延时
         start_init_cnt <= start_init_cnt + 1'b1;        //当摄像头上电时和配置第一个寄存器时，增加延时，其他都不需要延迟
     end
 end
@@ -69,7 +69,7 @@ end
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n)
         i2c_exec <= 1'b0;
-    else if(start_init_cnt == 10'd1022)
+    else if(start_init_cnt == 10'd1022)                 //配置完第一位寄存器，延时1ms后，配置第二位寄存器
         i2c_exec <= 1'b1;
     //只有刚上电和配置第一个寄存器增加延时
     else if(i2c_done && (init_reg_cnt != 7'd1) && (init_reg_cnt < REG_NUM))     //配置其他寄存器时，不需要延时
@@ -82,7 +82,7 @@ end
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n)
         init_done <= 1'b0;
-    else if((init_reg_cnt == REG_NUM) && i2c_done)  
+    else if((init_reg_cnt == REG_NUM) && i2c_done)          //配置完70个寄存器后，且配置完成，发送配置完成信号
         init_done <= 1'b1;  
 end        
 //**********************************************************************************************************************************************************************************//
@@ -96,24 +96,24 @@ always @(posedge clk or negedge rst_n) begin
         case(init_reg_cnt)
             //先对寄存器进行软件复位，使寄存器恢复初始值，高八位为寄存器地址，低八位为寄存器数据
             //寄存器软件复位后，需要延时1ms才能配置其它寄存器
-            7'd0  : i2c_data <= {8'h12, 8'h80}; //COM7 BIT[7]:复位所有的寄存器
+            7'd0  : i2c_data <= {8'h12, 8'h80}; //COM7 BIT[7]:复位所有的寄存器，SCCB Register Reset
             7'd1  : i2c_data <= {8'h3d, 8'h03}; //COM12 模拟过程直流补偿
             7'd2  : i2c_data <= {8'h15, 8'h00}; //COM10 href/vsync/pclk/data信号控制
-            7'd3  : i2c_data <= {8'h17, 8'h23}; //HSTART 水平起始位置
+            7'd3  : i2c_data <= {8'h17, 8'h23}; //HSTART 水平起始位置，VGA为0x23
             7'd4  : i2c_data <= {8'h18, 8'ha0}; //HSIZE 水平尺寸，{8'ha0, 00} = 相当于 8'ha0左移两位 = 8'ha0_00 = 640
-            7'd5  : i2c_data <= {8'h19, 8'h07}; //VSTRT 垂直起始位置
+            7'd5  : i2c_data <= {8'h19, 8'h07}; //VSTRT 垂直起始位置，VGA为0x07
             7'd6  : i2c_data <= {8'h1a, 8'hf0}; //VSIZE 垂直尺寸，{8'hf0, 0} = 相当于 8'hf0左移一位 = 8'hf0_0 = 480
             7'd7  : i2c_data <= {8'h32, 8'h00}; //HREF 图像开始和尺寸控制，控制低位
             7'd8  : i2c_data <= {8'h29, 8'ha0}; //HOutSize 水平输出尺寸
             7'd9  : i2c_data <= {8'h2a, 8'h00}; //EXHCH 虚拟像素MSB
             7'd10 : i2c_data <= {8'h2b, 8'h00}; //EXHCL 虚拟像素LSB
             7'd11 : i2c_data <= {8'h2c, 8'hf0}; //VOutSize 垂直输出尺寸
-            7'd12 : i2c_data <= {8'h0d, 8'h41}; //COM4 PLL倍频设置(multiplier)
-                                                //Bit[7:6]:  0:1x 1:4x 2:6x 3:8x
-            7'd13 : i2c_data <= {8'h11, 8'h00}; //CLKRC 内部时钟配置 
-                                                //Freq=multiplier/[(CLKRC[5:0]+1)*2]=24M（摄像头自带12M晶振的两倍频）
-            7'd14 : i2c_data <= {8'h12, 8'h06}; //COM7 输出VGA RGB565格式                                     
-            7'd15 : i2c_data <= {8'h0c, 8'h10}; //COM3 Bit[0]: 0:图像数据 1:彩条测试
+            7'd12 : i2c_data <= {8'h0d, 8'h41}; //COM4 PLL倍频设置(multiplier)，本次设置为1分频
+                                                //Bit[7:6]:  00:1x; 01:4x; 10:6x; 11:8x
+            7'd13 : i2c_data <= {8'h11, 8'h00}; //CLKRC 内部时钟配置,Bit[6]使用外部时钟，Bit[5:0]设置内部时钟频率
+                                                //内部时钟频率：Freq=F(internal clock)/[(CLKRC[5:0]+1)*2] = 12M/0.5 = 24M（摄像头自带12M晶振的两倍频）
+            7'd14 : i2c_data <= {8'h12, 8'h06}; //COM7 输出VGA Bit[3:2]=01 则输出RGB565格式
+            7'd15 : i2c_data <= {8'h0c, 8'h10}; //COM3 Bit[0]彩条测试模式输出使能: 0:图像数据 1:彩条测试，用于测试摄像头或者其他模块是否有BUG
             //DSP 控制
             7'd16 : i2c_data <= {8'h42, 8'h7f}; //TGT_B 黑电平校准蓝色通道目标值
             7'd17 : i2c_data <= {8'h4d, 8'h09}; //FixGain 模拟增益放大器
