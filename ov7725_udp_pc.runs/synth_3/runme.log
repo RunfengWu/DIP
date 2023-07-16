@@ -1,0 +1,1194 @@
+
+*** Running vivado
+    with args -log ov7725_udp_pc.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ov7725_udp_pc.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source ov7725_udp_pc.tcl -notrace
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 306.238 ; gain = 20.047
+Command: synth_design -top ov7725_udp_pc -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 12708 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 855.820 ; gain = 239.152
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ov7725_udp_pc' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/ov7725_udp_pc.v:23]
+	Parameter BOARD_MAC bound to: 48'b000000000001000100100010001100110100010001010101 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter DES_MAC bound to: 48'b111111111111111111111111111111111111111111111111 
+	Parameter DES_IP bound to: -1062731418 - type: integer 
+	Parameter SLAVE_ADDR bound to: 7'b0100001 
+	Parameter BIT_CTRL bound to: 1'b0 
+	Parameter CLK_FREQ bound to: 26'b10111110101111000010000000 
+	Parameter I2C_FREQ bound to: 18'b111101000010010000 
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.runs/synth_3/.Xil/Vivado-1424-DESKTOP-2LNJS3B/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.runs/synth_3/.Xil/Vivado-1424-DESKTOP-2LNJS3B/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'i2c_ov7725_rgb565_cfg' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/ov7725/i2c_ov7725_rgb565_cfg.v:26]
+	Parameter REG_NUM bound to: 7'b1000110 
+INFO: [Synth 8-6155] done synthesizing module 'i2c_ov7725_rgb565_cfg' (2#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/ov7725/i2c_ov7725_rgb565_cfg.v:26]
+INFO: [Synth 8-6157] synthesizing module 'i2c_dri' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/ov7725/i2c_dri.v:26]
+	Parameter SLAVE_ADDR bound to: 7'b0100001 
+	Parameter CLK_FREQ bound to: 26'b10111110101111000010000000 
+	Parameter I2C_FREQ bound to: 18'b111101000010010000 
+	Parameter st_idle bound to: 8'b00000001 
+	Parameter st_sladdr bound to: 8'b00000010 
+	Parameter st_addr16 bound to: 8'b00000100 
+	Parameter st_addr8 bound to: 8'b00001000 
+	Parameter st_data_wr bound to: 8'b00010000 
+	Parameter st_addr_rd bound to: 8'b00100000 
+	Parameter st_data_rd bound to: 8'b01000000 
+	Parameter st_stop bound to: 8'b10000000 
+INFO: [Synth 8-155] case statement is not full and has no default [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/ov7725/i2c_dri.v:201]
+INFO: [Synth 8-6155] done synthesizing module 'i2c_dri' (3#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/ov7725/i2c_dri.v:26]
+WARNING: [Synth 8-7023] instance 'u_i2c_dri' of module 'i2c_dri' has 13 connections declared, but only 12 given [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/ov7725_udp_pc.v:125]
+INFO: [Synth 8-6157] synthesizing module 'cmos_capture_data' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/ov7725/cmos_capture_data.v:25]
+	Parameter WAIT_FRAME bound to: 4'b1010 
+INFO: [Synth 8-6155] done synthesizing module 'cmos_capture_data' (4#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/ov7725/cmos_capture_data.v:25]
+INFO: [Synth 8-6157] synthesizing module 'start_transfer_ctrl' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/start_transfer_ctrl.v:23]
+	Parameter START bound to: 1 - type: string 
+	Parameter STOP bound to: 0 - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'start_transfer_ctrl' (5#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/start_transfer_ctrl.v:23]
+INFO: [Synth 8-6157] synthesizing module 'img_data_pkt' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/img_data_pkt.v:25]
+	Parameter CMOS_H_PIXEL bound to: 16'b0000001010000000 
+	Parameter CMOS_V_PIXEL bound to: 16'b0000000111100000 
+	Parameter IMG_FRAME_HEAD bound to: -262494961 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'async_fifo_1024x32b' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.runs/synth_3/.Xil/Vivado-1424-DESKTOP-2LNJS3B/realtime/async_fifo_1024x32b_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'async_fifo_1024x32b' (6#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.runs/synth_3/.Xil/Vivado-1424-DESKTOP-2LNJS3B/realtime/async_fifo_1024x32b_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'img_data_pkt' (7#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/img_data_pkt.v:25]
+INFO: [Synth 8-6157] synthesizing module 'eth_top' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/eth_top.v:23]
+	Parameter BOARD_MAC bound to: 48'b000000000001000100100010001100110100010001010101 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter DES_MAC bound to: 48'b111111111111111111111111111111111111111111111111 
+	Parameter DES_IP bound to: -1062731418 - type: integer 
+	Parameter IDELAY_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'gmii_to_rgmii' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/gmii_to_rgmii/gmii_to_rgmii.v:23]
+	Parameter IDELAY_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rgmii_rx' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/gmii_to_rgmii/rgmii_rx.v:23]
+	Parameter IDELAY_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'IDELAYE2' [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:35027]
+	Parameter CINVCTRL_SEL bound to: FALSE - type: string 
+	Parameter DELAY_SRC bound to: IDATAIN - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: FALSE - type: string 
+	Parameter IDELAY_TYPE bound to: FIXED - type: string 
+	Parameter IDELAY_VALUE bound to: 0 - type: integer 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_DATAIN_INVERTED bound to: 1'b0 
+	Parameter IS_IDATAIN_INVERTED bound to: 1'b0 
+	Parameter PIPE_SEL bound to: FALSE - type: string 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+	Parameter SIM_DELAY_D bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2' (8#1) [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:35027]
+INFO: [Synth 8-6157] synthesizing module 'IDDR' [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:34892]
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE_PIPELINED - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IDDR' (9#1) [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:34892]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (10#1) [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6157] synthesizing module 'BUFIO' [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1336]
+INFO: [Synth 8-6155] done synthesizing module 'BUFIO' (11#1) [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1336]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/gmii_to_rgmii/rgmii_rx.v:69]
+INFO: [Synth 8-6157] synthesizing module 'IDELAYCTRL' [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:35014]
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IDELAYCTRL' (12#1) [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:35014]
+INFO: [Synth 8-6155] done synthesizing module 'rgmii_rx' (13#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/gmii_to_rgmii/rgmii_rx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'rgmii_tx' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/gmii_to_rgmii/rgmii_tx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ODDR' [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'ODDR' (14#1) [D:/Tools/IC/Vivado/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
+INFO: [Synth 8-6155] done synthesizing module 'rgmii_tx' (15#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/gmii_to_rgmii/rgmii_tx.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'gmii_to_rgmii' (16#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/gmii_to_rgmii/gmii_to_rgmii.v:23]
+INFO: [Synth 8-6157] synthesizing module 'arp' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp.v:23]
+	Parameter BOARD_MAC bound to: 48'b000000000001000100100010001100110100010001010101 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter DES_MAC bound to: 48'b111111111111111111111111111111111111111111111111 
+	Parameter DES_IP bound to: -1062731418 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'arp_rx' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_rx.v:23]
+	Parameter BOARD_MAC bound to: 48'b000000000001000100100010001100110100010001010101 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter st_idle bound to: 5'b00001 
+	Parameter st_preamble bound to: 5'b00010 
+	Parameter st_eth_head bound to: 5'b00100 
+	Parameter st_arp_data bound to: 5'b01000 
+	Parameter st_rx_end bound to: 5'b10000 
+	Parameter ETH_TPYE bound to: 16'b0000100000000110 
+INFO: [Synth 8-6155] done synthesizing module 'arp_rx' (17#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_rx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'arp_tx' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_tx.v:23]
+	Parameter BOARD_MAC bound to: 48'b000000000001000100100010001100110100010001010101 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter DES_MAC bound to: 48'b111111111111111111111111111111111111111111111111 
+	Parameter DES_IP bound to: -1062731418 - type: integer 
+	Parameter st_idle bound to: 5'b00001 
+	Parameter st_preamble bound to: 5'b00010 
+	Parameter st_eth_head bound to: 5'b00100 
+	Parameter st_arp_data bound to: 5'b01000 
+	Parameter st_crc bound to: 5'b10000 
+	Parameter ETH_TYPE bound to: 16'b0000100000000110 
+	Parameter HD_TYPE bound to: 16'b0000000000000001 
+	Parameter PROTOCOL_TYPE bound to: 16'b0000100000000000 
+	Parameter MIN_DATA_NUM bound to: 16'b0000000000101110 
+INFO: [Synth 8-6155] done synthesizing module 'arp_tx' (18#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_tx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'crc32_d8' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/crc32_d8.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'crc32_d8' (19#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/crc32_d8.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'arp' (20#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp.v:23]
+INFO: [Synth 8-6157] synthesizing module 'udp' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp.v:23]
+	Parameter BOARD_MAC bound to: 48'b000000000001000100100010001100110100010001010101 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter DES_MAC bound to: 48'b111111111111111111111111111111111111111111111111 
+	Parameter DES_IP bound to: -1062731418 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'udp_rx' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_rx.v:23]
+	Parameter BOARD_MAC bound to: 48'b000000000001000100100010001100110100010001010101 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter st_idle bound to: 7'b0000001 
+	Parameter st_preamble bound to: 7'b0000010 
+	Parameter st_eth_head bound to: 7'b0000100 
+	Parameter st_ip_head bound to: 7'b0001000 
+	Parameter st_udp_head bound to: 7'b0010000 
+	Parameter st_rx_data bound to: 7'b0100000 
+	Parameter st_rx_end bound to: 7'b1000000 
+	Parameter ETH_TYPE bound to: 16'b0000100000000000 
+INFO: [Synth 8-6155] done synthesizing module 'udp_rx' (21#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_rx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'udp_tx' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_tx.v:23]
+	Parameter BOARD_MAC bound to: 48'b000000000001000100100010001100110100010001010101 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter DES_MAC bound to: 48'b111111111111111111111111111111111111111111111111 
+	Parameter DES_IP bound to: -1062731418 - type: integer 
+	Parameter st_idle bound to: 7'b0000001 
+	Parameter st_check_sum bound to: 7'b0000010 
+	Parameter st_preamble bound to: 7'b0000100 
+	Parameter st_eth_head bound to: 7'b0001000 
+	Parameter st_ip_head bound to: 7'b0010000 
+	Parameter st_tx_data bound to: 7'b0100000 
+	Parameter st_crc bound to: 7'b1000000 
+	Parameter ETH_TYPE bound to: 16'b0000100000000000 
+	Parameter MIN_DATA_NUM bound to: 16'b0000000000010010 
+WARNING: [Synth 8-5788] Register ip_head_reg[6] in module udp_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_tx.v:200]
+WARNING: [Synth 8-5788] Register ip_head_reg[5] in module udp_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_tx.v:200]
+WARNING: [Synth 8-5788] Register ip_head_reg[4] in module udp_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_tx.v:200]
+WARNING: [Synth 8-5788] Register ip_head_reg[3] in module udp_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_tx.v:200]
+WARNING: [Synth 8-5788] Register ip_head_reg[2] in module udp_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_tx.v:200]
+WARNING: [Synth 8-5788] Register ip_head_reg[0] in module udp_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_tx.v:200]
+INFO: [Synth 8-6155] done synthesizing module 'udp_tx' (22#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_tx.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'udp' (23#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp.v:23]
+INFO: [Synth 8-6157] synthesizing module 'eth_ctrl' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/eth_ctrl.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'eth_ctrl' (24#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/eth_ctrl.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'eth_top' (25#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/eth_top.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ov7725_udp_pc' (26#1) [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/ov7725_udp_pc.v:23]
+WARNING: [Synth 8-3917] design ov7725_udp_pc has port cam_rst_n driven by constant 1
+WARNING: [Synth 8-3917] design ov7725_udp_pc has port cam_sgm_ctrl driven by constant 1
+WARNING: [Synth 8-3331] design eth_ctrl has unconnected port arp_tx_done
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[31]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[30]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[29]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[28]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[27]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[26]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[25]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[24]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[31]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[30]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[29]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[28]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[27]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[26]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[25]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[24]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_en
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[23]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[22]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[21]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[20]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[19]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[18]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[17]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[16]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[15]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[14]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[13]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[12]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[11]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[10]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[9]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[8]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[7]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[6]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[5]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[4]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[3]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[2]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[1]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 936.676 ; gain = 320.008
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 936.676 ; gain = 320.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 936.676 ; gain = 320.008
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.109 . Memory (MB): peak = 936.676 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [g:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
+Finished Parsing XDC File [g:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
+Parsing XDC File [g:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/ip/async_fifo_1024x32b_1/async_fifo_1024x32b/async_fifo_1024x32b_in_context.xdc] for cell 'u_img_data_pkt/async_fifo_1024x32b_inst'
+Finished Parsing XDC File [g:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/ip/async_fifo_1024x32b_1/async_fifo_1024x32b/async_fifo_1024x32b_in_context.xdc] for cell 'u_img_data_pkt/async_fifo_1024x32b_inst'
+Parsing XDC File [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/constrs_1/new/eth_udp_loop.xdc]
+WARNING: [Constraints 18-619] A clock with name 'sys_clk' already exists, overwriting the previous clock with the same name. [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/constrs_1/new/eth_udp_loop.xdc:1]
+WARNING: [Vivado 12-507] No nets matched 'cam_pclk_IBUF'. [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/constrs_1/new/eth_udp_loop.xdc:23]
+Finished Parsing XDC File [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/constrs_1/new/eth_udp_loop.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/constrs_1/new/eth_udp_loop.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/ov7725_udp_pc_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/constrs_1/new/eth_udp_loop.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ov7725_udp_pc_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/ov7725_udp_pc_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1061.051 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.124 . Memory (MB): peak = 1061.051 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'u_img_data_pkt/async_fifo_1024x32b_inst' at clock pin 'rd_clk' is different from the actual clock period '8.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:35 . Memory (MB): peak = 1065.074 ; gain = 448.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:35 . Memory (MB): peak = 1065.074 ; gain = 448.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clk. (constraint file  g:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk. (constraint file  g:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property DONT_TOUCH = true for u_clk_wiz_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for u_img_data_pkt/async_fifo_1024x32b_inst. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:35 . Memory (MB): peak = 1065.074 ; gain = 448.406
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'cur_state_reg' in module 'i2c_dri'
+INFO: [Synth 8-5546] ROM "scl" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "scl" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "scl" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "sda_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "sda_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "sda_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "sda_dir" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sda_dir" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sda_dir" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sda_dir" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_data_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'cur_state_reg' in module 'arp_rx'
+INFO: [Synth 8-4471] merging register 'crc_clr_reg' into 'tx_done_reg' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_tx.v:315]
+INFO: [Synth 8-4471] merging register 'arp_data_reg[23][7:0]' into 'eth_head_reg[5][7:0]' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_tx.v:181]
+INFO: [Synth 8-4471] merging register 'arp_data_reg[22][7:0]' into 'eth_head_reg[4][7:0]' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_tx.v:181]
+INFO: [Synth 8-4471] merging register 'arp_data_reg[21][7:0]' into 'eth_head_reg[3][7:0]' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_tx.v:181]
+INFO: [Synth 8-4471] merging register 'arp_data_reg[20][7:0]' into 'eth_head_reg[2][7:0]' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_tx.v:181]
+INFO: [Synth 8-4471] merging register 'arp_data_reg[19][7:0]' into 'eth_head_reg[1][7:0]' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_tx.v:181]
+INFO: [Synth 8-4471] merging register 'arp_data_reg[18][7:0]' into 'eth_head_reg[0][7:0]' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/arp/arp_tx.v:181]
+INFO: [Synth 8-802] inferred FSM for state register 'cur_state_reg' in module 'arp_tx'
+INFO: [Synth 8-802] inferred FSM for state register 'cur_state_reg' in module 'udp_rx'
+INFO: [Synth 8-4471] merging register 'crc_clr_reg' into 'tx_done_reg' [G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.srcs/sources_1/new/udp/udp_tx.v:404]
+INFO: [Synth 8-802] inferred FSM for state register 'cur_state_reg' in module 'udp_tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                 st_idle |                         00000001 |                         00000001
+               st_sladdr |                         00000010 |                         00000010
+               st_addr16 |                         00000100 |                         00000100
+                st_addr8 |                         00001000 |                         00001000
+              st_data_wr |                         00010000 |                         00010000
+              st_addr_rd |                         00100000 |                         00100000
+              st_data_rd |                         01000000 |                         01000000
+                 st_stop |                         10000000 |                         10000000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'cur_state_reg' in module 'i2c_dri'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                 st_idle |                            00001 |                            00001
+             st_preamble |                            00010 |                            00010
+             st_eth_head |                            00100 |                            00100
+             st_arp_data |                            01000 |                            01000
+               st_rx_end |                            10000 |                            10000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'cur_state_reg' in module 'arp_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                 st_idle |                            00001 |                            00001
+             st_preamble |                            00010 |                            00010
+             st_eth_head |                            00100 |                            00100
+             st_arp_data |                            01000 |                            01000
+                  st_crc |                            10000 |                            10000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'cur_state_reg' in module 'arp_tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                 st_idle |                          0000001 |                          0000001
+             st_preamble |                          0000010 |                          0000010
+             st_eth_head |                          0000100 |                          0000100
+              st_ip_head |                          0001000 |                          0001000
+             st_udp_head |                          0010000 |                          0010000
+              st_rx_data |                          0100000 |                          0100000
+               st_rx_end |                          1000000 |                          1000000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'cur_state_reg' in module 'udp_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                 st_idle |                          0000001 |                          0000001
+            st_check_sum |                          0000010 |                          0000010
+             st_preamble |                          0000100 |                          0000100
+             st_eth_head |                          0001000 |                          0001000
+              st_ip_head |                          0010000 |                          0010000
+              st_tx_data |                          0100000 |                          0100000
+                  st_crc |                          1000000 |                          1000000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'cur_state_reg' in module 'udp_tx'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:38 . Memory (MB): peak = 1065.074 ; gain = 448.406
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	  10 Input     20 Bit       Adders := 1     
+	   3 Input     17 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 8     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 3     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 5     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 16    
+	   3 Input      1 Bit         XORs := 12    
+	   6 Input      1 Bit         XORs := 14    
+	   8 Input      1 Bit         XORs := 2     
+	   5 Input      1 Bit         XORs := 8     
+	   7 Input      1 Bit         XORs := 14    
+	  10 Input      1 Bit         XORs := 4     
+	   9 Input      1 Bit         XORs := 6     
+	  12 Input      1 Bit         XORs := 2     
+	   4 Input      1 Bit         XORs := 2     
++---Registers : 
+	               48 Bit    Registers := 4     
+	               32 Bit    Registers := 16    
+	               16 Bit    Registers := 14    
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 72    
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 55    
++---Muxes : 
+	   6 Input     48 Bit        Muxes := 1     
+	   2 Input     48 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 11    
+	   4 Input     32 Bit        Muxes := 1     
+	   8 Input     32 Bit        Muxes := 4     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 13    
+	   6 Input     16 Bit        Muxes := 2     
+	   3 Input     16 Bit        Muxes := 1     
+	   8 Input     16 Bit        Muxes := 2     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	  22 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 13    
+	   9 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 3     
+	   5 Input      8 Bit        Muxes := 1     
+	  31 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 20    
+	  29 Input      7 Bit        Muxes := 1     
+	  33 Input      7 Bit        Muxes := 1     
+	  22 Input      7 Bit        Muxes := 1     
+	   6 Input      7 Bit        Muxes := 1     
+	   9 Input      7 Bit        Muxes := 1     
+	   3 Input      7 Bit        Muxes := 3     
+	   8 Input      7 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 10    
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 40    
+	   4 Input      5 Bit        Muxes := 3     
+	   3 Input      5 Bit        Muxes := 3     
+	   6 Input      5 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 7     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 14    
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 108   
+	  31 Input      1 Bit        Muxes := 7     
+	  29 Input      1 Bit        Muxes := 7     
+	  22 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 19    
+	  33 Input      1 Bit        Muxes := 5     
+	   9 Input      1 Bit        Muxes := 13    
+	   4 Input      1 Bit        Muxes := 14    
+	   8 Input      1 Bit        Muxes := 22    
+	   5 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module i2c_ov7725_rgb565_cfg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module i2c_dri 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	  22 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 4     
+	   9 Input      8 Bit        Muxes := 2     
+	  31 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 6     
+	  29 Input      7 Bit        Muxes := 1     
+	  33 Input      7 Bit        Muxes := 1     
+	  22 Input      7 Bit        Muxes := 1     
+	   6 Input      7 Bit        Muxes := 1     
+	   9 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 32    
+	  31 Input      1 Bit        Muxes := 7     
+	  29 Input      1 Bit        Muxes := 7     
+	  22 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 5     
+	  33 Input      1 Bit        Muxes := 5     
+	   9 Input      1 Bit        Muxes := 13    
+Module cmos_capture_data 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+Module start_transfer_ctrl 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module img_data_pkt 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 6     
+Module arp_rx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               48 Bit    Registers := 3     
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   6 Input     48 Bit        Muxes := 1     
+	   2 Input     48 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   6 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 5     
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 18    
+	   4 Input      5 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 3     
+	   6 Input      5 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 23    
+	   4 Input      1 Bit        Muxes := 3     
+Module arp_tx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 45    
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 4     
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 5     
+	   6 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
+	   6 Input      1 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 2     
+Module crc32_d8 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 8     
+	   3 Input      1 Bit         XORs := 6     
+	   6 Input      1 Bit         XORs := 7     
+	   8 Input      1 Bit         XORs := 1     
+	   5 Input      1 Bit         XORs := 4     
+	   7 Input      1 Bit         XORs := 7     
+	  10 Input      1 Bit         XORs := 2     
+	   9 Input      1 Bit         XORs := 3     
+	  12 Input      1 Bit         XORs := 1     
+	   4 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module udp_rx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               48 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 4     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
+	   8 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 5     
+	   8 Input     16 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 3     
+	   3 Input      7 Bit        Muxes := 3     
+	   2 Input      7 Bit        Muxes := 10    
+	   8 Input      7 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 10    
+	   4 Input      5 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 17    
+	   8 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
+Module udp_tx 
+Detailed RTL Component Info : 
++---Adders : 
+	  10 Input     20 Bit       Adders := 1     
+	   3 Input     17 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 6     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 8     
+	               16 Bit    Registers := 3     
+	                8 Bit    Registers := 23    
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   8 Input     32 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   4 Input     16 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 2     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 4     
+	   8 Input      7 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 7     
+	   4 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 5     
+	   8 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 10    
+	   8 Input      1 Bit        Muxes := 12    
+	   5 Input      1 Bit        Muxes := 1     
+Module eth_ctrl 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5587] ROM size for "scl" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "scl" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "sda_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "sda_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sda_dir" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_data_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_r" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3917] design ov7725_udp_pc has port cam_rst_n driven by constant 1
+WARNING: [Synth 8-3917] design ov7725_udp_pc has port cam_sgm_ctrl driven by constant 1
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[31]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[30]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[29]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[28]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[27]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[26]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[25]
+WARNING: [Synth 8-3331] design udp_tx has unconnected port crc_data[24]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[31]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[30]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[29]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[28]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[27]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[26]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[25]
+WARNING: [Synth 8-3331] design arp_tx has unconnected port crc_data[24]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_en
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[23]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[22]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[21]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[20]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[19]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[18]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[17]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[16]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[15]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[14]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[13]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[12]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[11]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[10]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[9]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[8]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[7]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[6]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[5]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[4]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[3]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[2]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[1]
+WARNING: [Synth 8-3331] design start_transfer_ctrl has unconnected port udp_rec_data[0]
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_rx/ip_head_byte_num_reg[0]' (FDCE) to 'u_eth_top/u_udp/u_udp_rx/ip_head_byte_num_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_rx/ip_head_byte_num_reg[1] )
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[28]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[29]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[30]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[31]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[20]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[21]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[21]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[22]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[22]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[23]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[24]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[25]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[25]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[26]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[26]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/check_buffer_reg[27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\check_buffer_reg[27] )
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[0]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[1]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[2]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/udp_num_reg[0]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/total_num_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/total_num_reg[0]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/tx_data_num_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/udp_num_reg[1]' (FDCE) to 'u_eth_top/u_udp/u_udp_tx/tx_data_num_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[4]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[5]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[6]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[7]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[8]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[10]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[9]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[11]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[12]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[13]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_img_data_pkt/udp_tx_byte_num_reg[14]' (FDCE) to 'u_img_data_pkt/udp_tx_byte_num_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_img_data_pkt/udp_tx_byte_num_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_i2c_dri/wr_flag_reg )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[7][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[6][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[5][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[4][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[3][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[2][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[1][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[13][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[12][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[11][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[10][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[9][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[8][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[7][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[6][4] )
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][28]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][28]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][24]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[0][28]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][28]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][20]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][20]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][16]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[0][20]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][20]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][12]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][12]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[6][12]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][12]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][4]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][4]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][8]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[6][4]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][4]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][1]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[7][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[6][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[5][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[4][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[3][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[2][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[1][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[13][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[12][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[11][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[10][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[9][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[8][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[7][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[6][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[15][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[14][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[13][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[12][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[11][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[10][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[9][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[8][4] )
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_arp/u_arp_tx/arp_data_reg[7][4]' (FDCE) to 'u_eth_top/u_arp/u_arp_tx/arp_data_reg[7][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[6][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[5][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[4][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[3][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[1][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[17][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[16][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[7][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[6][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[5][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[3][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[2][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\preamble_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[13][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[12][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[11][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[10][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[9][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[8][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[7][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/\u_udp/u_udp_tx /\eth_head_reg[6][0] )
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][24]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][24]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][29]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[0][24]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][24]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][16]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][16]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][30]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[0][16]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[6][16]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[0][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][16]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][8]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][8]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[6][8]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][8]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][0]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][0]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][13]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[6][0]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][0]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[7][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[6][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[5][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[3][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[2][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/preamble_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[13][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[12][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[11][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[10][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[9][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[8][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[7][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/eth_head_reg[6][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[15][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[14][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[13][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[12][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[11][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[10][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[9][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[8][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[6][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[5][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[3][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[2][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_eth_top/u_arp/\u_arp_tx/arp_data_reg[0][0] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][29]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][29]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][21]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[0][29]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][29]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][21]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][21]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][25]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[0][21]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][21]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][13]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][13]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[6][13]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][13]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][5]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][5]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][9]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[6][5]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][5]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_arp/u_arp_tx/arp_data_reg[7][5]' (FDCE) to 'u_eth_top/u_arp/u_arp_tx/arp_data_reg[7][7]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][25]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][25]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][17]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[0][25]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][25]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][17]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][17]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][22]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[0][17]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][17]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][9]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][9]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[6][9]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][9]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][1]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][3]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][1]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[1][6]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[6][1]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][1]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][3]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][30]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][3]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[0][30]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][3]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[5][30]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][22]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][22]' (FDE) to 'u_eth_top/u_udp/u_udp_tx/ip_head_reg[2][26]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:01:02 . Memory (MB): peak = 1065.074 ; gain = 448.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++----------------------+------------+---------------+----------------+
+|Module Name           | RTL Object | Depth x Width | Implemented As | 
++----------------------+------------+---------------+----------------+
+|i2c_ov7725_rgb565_cfg | i2c_data   | 128x16        | LUT            | 
+|i2c_dri               | scl        | 64x1          | LUT            | 
+|i2c_dri               | scl        | 64x1          | LUT            | 
+|i2c_dri               | sda_out    | 64x1          | LUT            | 
+|i2c_ov7725_rgb565_cfg | i2c_data   | 128x16        | LUT            | 
+|i2c_dri               | scl        | 64x1          | LUT            | 
+|i2c_dri               | scl        | 64x1          | LUT            | 
+|i2c_dri               | sda_out    | 64x1          | LUT            | 
++----------------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'sys_clk'
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:01:13 . Memory (MB): peak = 1065.074 ; gain = 448.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:17 . Memory (MB): peak = 1086.027 ; gain = 469.359
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:03 ; elapsed = 00:01:20 . Memory (MB): peak = 1086.840 ; gain = 470.172
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:10 ; elapsed = 00:01:27 . Memory (MB): peak = 1092.359 ; gain = 475.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:10 ; elapsed = 00:01:27 . Memory (MB): peak = 1092.359 ; gain = 475.691
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:10 ; elapsed = 00:01:28 . Memory (MB): peak = 1092.359 ; gain = 475.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:10 ; elapsed = 00:01:28 . Memory (MB): peak = 1092.359 ; gain = 475.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:10 ; elapsed = 00:01:28 . Memory (MB): peak = 1092.359 ; gain = 475.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:10 ; elapsed = 00:01:28 . Memory (MB): peak = 1092.359 ; gain = 475.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------+----------+
+|      |BlackBox name       |Instances |
++------+--------------------+----------+
+|1     |clk_wiz_0           |         1|
+|2     |async_fifo_1024x32b |         1|
++------+--------------------+----------+
+
+Report Cell Usage: 
++------+--------------------+------+
+|      |Cell                |Count |
++------+--------------------+------+
+|1     |async_fifo_1024x32b |     1|
+|2     |clk_wiz_0           |     1|
+|3     |BUFG                |     3|
+|4     |BUFIO               |     1|
+|5     |CARRY4              |    69|
+|6     |IDDR                |     5|
+|7     |IDELAYCTRL          |     1|
+|8     |IDELAYE2            |     5|
+|9     |LUT1                |    50|
+|10    |LUT2                |   168|
+|11    |LUT3                |   117|
+|12    |LUT4                |   210|
+|13    |LUT5                |   317|
+|14    |LUT6                |   476|
+|15    |MUXF7               |    10|
+|16    |ODDR                |     5|
+|17    |FDCE                |   777|
+|18    |FDPE                |   178|
+|19    |FDRE                |    45|
+|20    |FDSE                |    10|
+|21    |IBUF                |    18|
+|22    |OBUF                |    10|
+|23    |OBUFT               |     1|
++------+--------------------+------+
+
+Report Instance Areas: 
++------+------------------------+----------------------+------+
+|      |Instance                |Module                |Cells |
++------+------------------------+----------------------+------+
+|1     |top                     |                      |  2525|
+|2     |  u_cmos_capture_data   |cmos_capture_data     |    52|
+|3     |  u_eth_top             |eth_top               |  1998|
+|4     |    u_arp               |arp                   |   918|
+|5     |      u_arp_rx          |arp_rx                |   569|
+|6     |      u_arp_tx          |arp_tx                |   295|
+|7     |      u_crc32_d8        |crc32_d8_0            |    54|
+|8     |    u_eth_ctrl          |eth_ctrl              |     8|
+|9     |    u_gmii_to_rgmii     |gmii_to_rgmii         |    36|
+|10    |      u_rgmii_rx        |rgmii_rx              |    31|
+|11    |      u_rgmii_tx        |rgmii_tx              |     5|
+|12    |    u_udp               |udp                   |  1036|
+|13    |      u_crc32_d8        |crc32_d8              |    69|
+|14    |      u_udp_rx          |udp_rx                |   351|
+|15    |      u_udp_tx          |udp_tx                |   616|
+|16    |  u_i2c_cfg             |i2c_ov7725_rgb565_cfg |   116|
+|17    |  u_i2c_dri             |i2c_dri               |   116|
+|18    |  u_img_data_pkt        |img_data_pkt          |   170|
+|19    |  u_start_transfer_ctrl |start_transfer_ctrl   |     1|
++------+------------------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:10 ; elapsed = 00:01:28 . Memory (MB): peak = 1092.359 ; gain = 475.691
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 44 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:57 ; elapsed = 00:01:18 . Memory (MB): peak = 1092.359 ; gain = 347.293
+Synthesis Optimization Complete : Time (s): cpu = 00:01:11 ; elapsed = 00:01:28 . Memory (MB): peak = 1092.359 ; gain = 475.691
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1092.359 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 94 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1101.430 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+313 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:20 ; elapsed = 00:01:47 . Memory (MB): peak = 1101.430 ; gain = 761.504
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1101.430 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'G:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.runs/synth_3/ov7725_udp_pc.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ov7725_udp_pc_utilization_synth.rpt -pb ov7725_udp_pc_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 14 08:56:13 2023...

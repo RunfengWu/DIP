@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Jul 11 09:51:45 2023
+# Process ID: 1492
+# Current directory: E:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.runs/async_fifo_1024x32b_synth_1
+# Command line: vivado.exe -log async_fifo_1024x32b.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source async_fifo_1024x32b.tcl
+# Log file: E:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.runs/async_fifo_1024x32b_synth_1/async_fifo_1024x32b.vds
+# Journal file: E:/IC/1_Work/DIP/OV7725_DIP/ov7725_udp_pc/ov7725_udp_pc.runs/async_fifo_1024x32b_synth_1\vivado.jou
+#-----------------------------------------------------------
+source async_fifo_1024x32b.tcl -notrace

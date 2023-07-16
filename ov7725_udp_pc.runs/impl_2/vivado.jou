@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Oct 20 14:46:26 2021
+# Process ID: 76700
+# Current directory: F:/ZYNQ/FPGA_Design/ov7725_udp_pc/ov7725_udp_pc.runs/impl_2
+# Command line: vivado.exe -log ov7725_udp_pc.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ov7725_udp_pc.tcl -notrace
+# Log file: F:/ZYNQ/FPGA_Design/ov7725_udp_pc/ov7725_udp_pc.runs/impl_2/ov7725_udp_pc.vdi
+# Journal file: F:/ZYNQ/FPGA_Design/ov7725_udp_pc/ov7725_udp_pc.runs/impl_2\vivado.jou
+#-----------------------------------------------------------
+source ov7725_udp_pc.tcl -notrace
