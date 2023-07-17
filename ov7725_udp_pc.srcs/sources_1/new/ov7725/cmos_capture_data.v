@@ -120,10 +120,10 @@ always @(posedge cam_pclk or negedge rst_n) begin                           //8Î
         byte_flag <= 1'b0;
     end
     else if(cam_href) begin
-        byte_flag <= ~byte_flag;
+        byte_flag <= ~byte_flag;                                            //¶þ·ÖÆµÆ´½Ó
         cam_data_d0 <= cam_data;
         if(byte_flag)
-            cmos_data_t <= {cam_data_d0,cam_data};
+            cmos_data_t <= {cam_data_d0,cam_data};                          //Ç°ÅÄÊý¾Ý×÷ÎªµÍ8Î»£¬ºóÅÄÊý¾Ý×÷Îª¸ß8Î»
         else;   
     end
     else begin
