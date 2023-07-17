@@ -137,14 +137,15 @@ i2c_dri
     .scl         (cam_scl   ),   
     .sda         (cam_sda   ),   
     //user interface
-    .dri_clk     (i2c_dri_clk)               //I2C操作时钟，用于配置摄像头寄存器，作为i2c_ov7725_rgb565_cfg模块的输入时钟
+    .dri_clk     (i2c_dri_clk)               //二分频（25m），作为i2c_ov7725_rgb565_cfg模块的输入时钟，用于配置摄像头寄存器
 );
 
 //***************************************************************** 摄像头CMOS采集模块 *****************************************************************//
+//8位数据拼接为16位数据过程中时钟域不变
 cmos_capture_data u_cmos_capture_data(
 
     .rst_n              (rst_n & cam_init_done),
-    .cam_pclk           (cam_pclk),   
+    .cam_pclk           (cam_pclk),         //cmos 数据像素时钟，使用摄像头自带的晶振12Mhz
     .cam_vsync          (cam_vsync),
     .cam_href           (cam_href),
     .cam_data           (cam_data),           
@@ -156,7 +157,7 @@ cmos_capture_data u_cmos_capture_data(
 
 //******************************************************************* 图像传输控制模块 ******************************************************************//
 start_transfer_ctrl u_start_transfer_ctrl(
-    .clk                (eth_rx_clk),
+    .clk                (eth_rx_clk),       //以太网接收时钟，通过接收数据来控制状态
     .rst_n              (rst_n),
     .udp_rec_pkt_done   (udp_rec_pkt_done),
     .udp_rec_en         (udp_rec_en      ),
@@ -167,15 +168,16 @@ start_transfer_ctrl u_start_transfer_ctrl(
     );       
      
 //********************************************************************* 图像封装模块 ********************************************************************//
+//需要使用异步FIFO实现跨时钟域的数据传输
 img_data_pkt u_img_data_pkt(    
     .rst_n              (rst_n),              
    
-    .cam_pclk           (cam_pclk),
+    .cam_pclk           (cam_pclk),         //cmos 数据写入时钟，使用摄像头自带的晶振12Mhz提供
     .img_vsync          (cmos_frame_vsync),
     .img_data_en        (img_data_en),
     .img_data           (img_data),
     .transfer_flag      (transfer_flag),            
-    .eth_tx_clk         (eth_tx_clk     ),  //和以太网相连接的信号
+    .eth_tx_clk         (eth_tx_clk     ),  //以太网模块读取数据时钟，时钟由eth_top模块提供
     .udp_tx_req         (udp_tx_req     ),
     .udp_tx_done        (udp_tx_done    ),
     .udp_tx_start_en    (udp_tx_start_en),
@@ -192,7 +194,7 @@ eth_top  #(
     )          
     u_eth_top(          
     .sys_rst_n       (rst_n     ),           //系统复位信号，低电平有效           
-    .clk_200m        (clk_200m), 
+    .clk_200m        (clk_200m),             //由PLL提供时钟，200Mhz时钟
     //以太网RGMII接口             
     .eth_rxc         (eth_rxc   ),           //RGMII接收数据时钟
     .eth_rx_ctl      (eth_rx_ctl),           //RGMII输入数据有效信号
@@ -202,8 +204,8 @@ eth_top  #(
     .eth_txd         (eth_txd   ),           //RGMII输出数据          
     .eth_rst_n       (eth_rst_n ),           //以太网芯片复位信号，低电平有效 
 
-    .gmii_rx_clk     (eth_rx_clk),
-    .gmii_tx_clk     (eth_tx_clk),       
+    .gmii_rx_clk     (eth_rx_clk),           //GMII接收时钟
+    .gmii_tx_clk     (eth_tx_clk),           //GMII发送时钟
     .udp_tx_start_en (udp_tx_start_en),
     .tx_data         (udp_tx_data),
     .tx_byte_num     (udp_tx_byte_num),

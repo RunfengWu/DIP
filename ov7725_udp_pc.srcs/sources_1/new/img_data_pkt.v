@@ -70,9 +70,9 @@ wire   [9:0]    fifo_rdusedw    ;  //当前FIFO缓存的个数
 //*****************************************************
 
 //信号采沿
-assign neg_vsync = img_vsync_d1 & (~img_vsync_d0);                  //帧下降沿
-assign pos_vsync = ~img_vsync_d1 & img_vsync_d0;                    //帧上升沿
-assign neg_vsynt_txc = img_vsync_txc_d1 & (~img_vsync_txc_d0);      //帧下降沿
+assign neg_vsync = img_vsync_d1 & (~img_vsync_d0);                  //像素时钟域下的帧下降沿
+assign pos_vsync = ~img_vsync_d1 & img_vsync_d0;                    //像素时钟域下的帧上升沿
+assign neg_vsynt_txc = img_vsync_txc_d1 & (~img_vsync_txc_d0);      //以太网时钟域下的帧下降沿
 
 //对img_vsync信号延时两个时钟周期,用于采沿
 always @(posedge cam_pclk or negedge rst_n) begin
@@ -98,6 +98,8 @@ always @(posedge eth_tx_clk or negedge rst_n) begin
     end
 end
 
+
+//********************************************************************* 像素时钟域下的信号处理 *********************************************************************//
 //寄存neg_vsync信号(下降沿)，用于控制帧头和图像分辨率的写入
 always @(posedge cam_pclk or negedge rst_n) begin
     if(!rst_n) 
@@ -115,7 +117,7 @@ always @(posedge cam_pclk or negedge rst_n) begin
     else if(neg_vsync)                                  //先写帧头，再写图像分辨率，最后才写图像数据
         wr_sw <= 1'b0;
     else if(img_data_en) begin                          //类似cmos_capture_data模块中8位数据扩展成16位RGB565格式的操作
-        wr_sw <= ~wr_sw;
+        wr_sw <= ~wr_sw;                                //二分频，用于拼接成32位数据
         img_data_d0 <= img_data;
     end    
 end 
@@ -146,13 +148,15 @@ always @(posedge cam_pclk or negedge rst_n) begin
     end
 end
 
+
+//********************************************************************* 以太网时钟域下的信号处理 *********************************************************************//
 //控制以太网发送的字节数
 always @(posedge eth_tx_clk or negedge rst_n) begin
     if(!rst_n)
         udp_tx_byte_num <= 1'b0;
     else if(neg_vsynt_txc)                                  //以太网发送时钟域下，帧第一行需要发送数据的字节数（包括帧头和行场分辨率）
         udp_tx_byte_num <= {CMOS_H_PIXEL,1'b0} + 16'd8;     //发送一帧数据，字节数为：640*2bit+8bit（包括8bit的帧头和行场分辨率）
-    else if(udp_tx_done)                                    //udp发送数据完成信号  
+    else if(udp_tx_done)                                    //udp发送一行数据完成信号
         udp_tx_byte_num <= {CMOS_H_PIXEL,1'b0};             //发送完成后，对udp_tx_byte_num赋值1280（640*2bit）
 end
 
@@ -170,7 +174,7 @@ always @(posedge eth_tx_clk or negedge rst_n) begin
     else begin
         udp_tx_start_en <= 1'b0;
         //当FIFO中的个数满足需要发送的字节数时
-        if(tx_busy_flag == 1'b0 && fifo_rdusedw >= udp_tx_byte_num[15:2]) begin     //FIFO存储的数据个数大于等于需要发送的字节数（一行），FIFO数据是32位，所以需要除以4（将8位转换成32位）
+        if(tx_busy_flag == 1'b0 && fifo_rdusedw >= udp_tx_byte_num[15:2]) begin     //FIFO存储的数据个数大于等于需要发送的字节数（一行），FIFO数据以Byte存储，但发送是以字节计数，所以需要除以4（将8位转换成32位）
             udp_tx_start_en <= 1'b1;                     //开始控制发送一包数据
             tx_busy_flag <= 1'b1;
         end

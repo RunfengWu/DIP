@@ -236,15 +236,16 @@ always @(posedge dri_clk or negedge rst_n) begin
                     7'd27: scl <= 1'b0;              
                     7'd28: sda_out <= SLAVE_ADDR[0]; 
                     7'd29: scl <= 1'b1;              
-                    7'd31: scl <= 1'b0;              
+
+                    7'd31: scl <= 1'b0;              //应答期
                     7'd32: sda_out <= 1'b0;          //0:写
                     7'd33: scl <= 1'b1;              
                     7'd35: scl <= 1'b0;              
                     7'd36: begin                     
-                        sda_dir <= 1'b0;             
+                        sda_dir <= 1'b0;             //SDA方向控制，输出高阻
                         sda_out <= 1'b1;                         
                     end                              
-                    7'd37: scl     <= 1'b1;            
+                    7'd37: scl  <= 1'b1;            
                     7'd38: begin                     //从机应答 
                         st_done <= 1'b1;
                         if(sda_in == 1'b1)           //高电平表示未应答
