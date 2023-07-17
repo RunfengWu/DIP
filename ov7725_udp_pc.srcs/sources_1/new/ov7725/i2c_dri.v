@@ -207,13 +207,13 @@ always @(posedge dri_clk or negedge rst_n) begin
                 cnt     <= 7'b0;               
                 if(i2c_exec) begin                   
                     wr_flag   <= i2c_rh_wl ;         
-                    addr_t    <= i2c_addr  ;         
+                    addr_t    <= i2c_addr  ;         //暂存地址和数据
                     data_wr_t <= i2c_data_w;  
                     i2c_ack <= 1'b0;                      
                 end                                  
             end                                      
             st_sladdr: begin                         //写地址(器件地址和字地址)
-                case(cnt)                            
+                case(cnt)                            //按照SCCB协议发送数据
                     7'd1 : sda_out <= 1'b0;          //开始I2C,拉低SDA
                     7'd3 : scl <= 1'b0;              
                     7'd4 : sda_out <= SLAVE_ADDR[6]; //传送器件地址

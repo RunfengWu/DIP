@@ -50,7 +50,7 @@ reg    [6:0]   init_reg_cnt  ;       //寄存器配置个数计数器
 always @(posedge clk or negedge rst_n) begin            //摄像头配置要求：刚上电或者软复位时，需要延时1ms（其他时刻保持在1023）
     if(!rst_n)
         start_init_cnt <= 10'b0;    
-    else if((init_reg_cnt == 7'd1) && i2c_done)         //针对第一个寄存器，需要延时1ms
+    else if((init_reg_cnt == 7'd1) && i2c_done)         //针对第一个寄存器，需要延时1ms（摄像头要求）
         start_init_cnt <= 10'b0;
     else if(start_init_cnt < 10'd1023) begin            //其他寄存器，不需要延时
         start_init_cnt <= start_init_cnt + 1'b1;        //当摄像头上电时和配置第一个寄存器时，增加延时，其他都不需要延迟
