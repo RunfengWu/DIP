@@ -30,7 +30,7 @@ module i2c_dri
       parameter   I2C_FREQ   = 18'd250_000     //IIC_SCL的时钟频率
     )
    (                                                            
-    input                clk        ,    
+    input                clk        ,          //25MHz时钟
     input                rst_n      ,   
                                          
     //i2c interface                      
@@ -74,7 +74,7 @@ reg    [ 9:0]  clk_cnt   ; //分频时钟计数
 
 //wire define
 wire          sda_in     ; //SDA输入信号
-wire   [8:0]  clk_divide ; //模块驱动时钟的分频系数
+wire   [8:0]  clk_divide ; //模块驱动时钟的分频系数，频率最好为4倍于SCL频率
 
 //*****************************************************
 //**                    main code
@@ -83,15 +83,16 @@ wire   [8:0]  clk_divide ; //模块驱动时钟的分频系数
 //SDA控制
 assign  sda     = sda_dir ?  sda_out : 1'bz;     //SDA数据输出或高阻
 assign  sda_in  = sda ;                          //SDA数据输入
-assign  clk_divide = (CLK_FREQ/I2C_FREQ) >> 2'd2;//模块驱动时钟的分频系数
+assign  clk_divide = (CLK_FREQ/I2C_FREQ) >> 2'd2;//模块驱动时钟的分频系数，clk_divide = (50M/250K)/4 = 50
 
+//I2C驱动时钟频率为250KHz，本次产生1MHz的驱动时钟，相当于是4倍频
 //生成I2C的SCL的四倍频率的驱动时钟用于驱动i2c的操作
-always @(posedge clk or negedge rst_n) begin     //如何产生4倍频...?
+always @(posedge clk or negedge rst_n) begin     
     if(!rst_n) begin
         dri_clk <=  1'b0;
         clk_cnt <= 10'd0;
     end
-    else if(clk_cnt == clk_divide[8:1] - 1'd1) begin
+    else if(clk_cnt == clk_divide[8:1] - 1'd1) begin    //clk_cnt == 24
         clk_cnt <= 10'd0;
         dri_clk <= ~dri_clk;
     end
@@ -213,7 +214,7 @@ always @(posedge dri_clk or negedge rst_n) begin
                 end                                  
             end                                      
             st_sladdr: begin                         //写地址(器件地址和字地址)
-                case(cnt)                            //按照SCCB协议发送数据
+                case(cnt)                            //按照SCCB协议发送数据，slc两拍跳转一次状态（驱动时钟的四分配），sda再scl为低电平时传输数据
                     7'd1 : sda_out <= 1'b0;          //开始I2C,拉低SDA
                     7'd3 : scl <= 1'b0;              
                     7'd4 : sda_out <= SLAVE_ADDR[6]; //传送器件地址

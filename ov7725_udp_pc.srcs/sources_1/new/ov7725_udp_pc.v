@@ -108,7 +108,7 @@ clk_wiz_0 u_clk_wiz_0
 
 //******************************************************************* I2C配置模块 *******************************************************************//
 i2c_ov7725_rgb565_cfg u_i2c_cfg(
-    .clk           (i2c_dri_clk),           //由i2c_dri模块提供的时钟
+    .clk           (i2c_dri_clk),           //由i2c_dri模块提供的时钟，25Mhz
     .rst_n         (rst_n),
     .i2c_done      (i2c_done),
     .i2c_exec      (i2c_exec),
@@ -137,7 +137,7 @@ i2c_dri
     .scl         (cam_scl   ),   
     .sda         (cam_sda   ),   
     //user interface
-    .dri_clk     (i2c_dri_clk)               //二分频（25m），作为i2c_ov7725_rgb565_cfg模块的输入时钟，用于配置摄像头寄存器
+    .dri_clk     (i2c_dri_clk)               //二分频（25MHz），作为i2c_ov7725_rgb565_cfg模块的输入时钟，用于配置摄像头寄存器
 );
 
 //***************************************************************** 摄像头CMOS采集模块 *****************************************************************//
@@ -204,7 +204,7 @@ eth_top  #(
     .eth_txd         (eth_txd   ),           //RGMII输出数据          
     .eth_rst_n       (eth_rst_n ),           //以太网芯片复位信号，低电平有效 
 
-    .gmii_rx_clk     (eth_rx_clk),           //GMII接收时钟
+    .gmii_rx_clk     (eth_rx_clk),           //GMII接收时钟，200Mhz时钟经常全局时钟缓存后输出
     .gmii_tx_clk     (eth_tx_clk),           //GMII发送时钟
     .udp_tx_start_en (udp_tx_start_en),
     .tx_data         (udp_tx_data),

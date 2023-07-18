@@ -51,8 +51,8 @@ reg        arp_rx_flag; //接收到ARP请求信号的标志
 //*****************************************************
 
 assign arp_tx_type = 1'b1;   //ARP发送类型固定为ARP应答                                   
-assign gmii_tx_en = protocol_sw ? udp_gmii_tx_en : arp_gmii_tx_en;
-assign gmii_txd = protocol_sw ? udp_gmii_txd : arp_gmii_txd;
+assign gmii_tx_en = protocol_sw ? udp_gmii_tx_en : arp_gmii_tx_en;  //GMII发送使能信号，根据协议切换信号选择发送UDP还是ARP数据的使能
+assign gmii_txd = protocol_sw ? udp_gmii_txd : arp_gmii_txd;        //GMII发送数据，根据协议切换信号选择发送UDP还是ARP数据
 
 //控制UDP发送忙信号
 always @(posedge clk or negedge rst_n) begin
@@ -69,12 +69,12 @@ always @(posedge clk or negedge rst_n) begin
     if(!rst_n)
         arp_rx_flag <= 1'b0;
     else if(arp_rx_done && (arp_rx_type == 1'b0))   
-        arp_rx_flag <= 1'b1;
+        arp_rx_flag <= 1'b1;                                        //接收到ARP请求信号，但需要等UDP发送完成后才能发送ARP应答
     else if(protocol_sw == 1'b0)
         arp_rx_flag <= 1'b0;
 end
 
-//控制protocol_sw和arp_tx_en信号
+//控制切换protocol_sw和arp_tx_en信号
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n) begin
         protocol_sw <= 1'b0;
@@ -82,7 +82,7 @@ always @(posedge clk or negedge rst_n) begin
     end
     else begin
         arp_tx_en <= 1'b0;
-        if(udp_tx_start_en)
+        if(udp_tx_start_en)                                         //UDP优先级高于ARP
             protocol_sw <= 1'b1;
         else if(arp_rx_flag && (udp_tx_busy == 1'b0)) begin
             protocol_sw <= 1'b0;
